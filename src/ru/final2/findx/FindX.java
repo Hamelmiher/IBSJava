@@ -2,7 +2,7 @@ package ru.final2.findx;
 import java.util.Scanner;
 
 
-public class findX {
+public class FindX {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Введите уравнение: ");

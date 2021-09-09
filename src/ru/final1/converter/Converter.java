@@ -2,7 +2,7 @@ package ru.final1.converter;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class converter {
+public class Converter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Введите текущий крус доллара: ");
