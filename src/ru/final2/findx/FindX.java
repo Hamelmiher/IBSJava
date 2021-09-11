@@ -12,7 +12,6 @@ public class FindX {
         } else if (equation.length() < 3) {
             System.out.println("В уравнении не хватает символов");
         } else {
-            //char number1 = equation.charAt(0);
             String number1 = Character.toString(equation.charAt(0));
             String sign = Character.toString(equation.charAt(1));
             String number2 = Character.toString(equation.charAt(2));
