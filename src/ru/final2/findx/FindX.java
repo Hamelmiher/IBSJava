@@ -39,10 +39,3 @@ public class FindX {
         }
     }
 }
-
-
-        /*String number1 = input.next();
-        String sign = input.next();
-        String number2 = input.next();
-        String equals = input.next();
-        String number3 = input.next();*/
