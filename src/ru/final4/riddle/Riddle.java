@@ -2,71 +2,73 @@ package ru.final4.riddle;
 import java.util.Scanner;
 
 public class Riddle {
+    static Scanner input = new Scanner(System.in);
+    static String question = "Сидит дед, во сто шуб одет, кто его раздевает, тот слезы проливает";
+    static String correctAnswer = "Заархивированный вирус";
+    static String corrects = "Правильно!";
+    static String help = "Подсказка";
+    static String helpAnswer = "Проблемы в архиве";
+    static String helpForbidden = "Подсказка недоступна";
+    static String error = "Обидно, приходи в другой раз";
+    static String nextAttempt = "Подумай!";
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String question = "Сидит дед, во сто шуб одет, кто его раздевает, тот слезы проливает";
-        String correctAnswer = "Заархивированный вирус";
-        String corrects = "Правильно!";
-        String help = "Подсказка";
-        String helpAnswer = "Проблемы в архиве";
-        String helpForbidden = "Подсказка недоступна";
-        String error = "Обидно, приходи в другой раз";
-        String nextAttempt = "Подумай!";
         System.out.println(question);
         System.out.println("Попытка номер 1: ");
         String firstsTry = input.nextLine();
         if (firstsTry.contains(correctAnswer)) {
-            System.out.println(corrects);
+            rightAnswer();
             return;
         }
         if (firstsTry.contains(help)) {
-            System.out.println(helpAnswer);
-            String helpAsked = input.nextLine();
-            if (helpAsked.contains(correctAnswer)) {
-                System.out.println(corrects);
-                return;
-            } else {
-                System.out.println(error);
-                return;
-            }
+            help();
+            return;
         } else {
             System.out.println(nextAttempt);
         }
         System.out.println("Попытка номер 2: ");
         String secondTry = input.nextLine();
         if (secondTry.contains(correctAnswer)) {
-            System.out.println(corrects);
+            rightAnswer();
             return;
         }
         if (secondTry.contains(help)) {
-            System.out.println(helpForbidden);
-            String secondTryAfterHelp = input.nextLine();
-            if (secondTryAfterHelp.contains(correctAnswer)) {
-                System.out.println(corrects);
-                return;
-            } else {
-                System.out.println(error);
-                return;
-            }
+            helpForbidden();
+            return;
         } else {
             System.out.println(nextAttempt);
         }
         System.out.println("Попытка номер 3: ");
         String thirdTry = input.nextLine();
         if (thirdTry.contains(correctAnswer)) {
-            System.out.println(corrects);
+            rightAnswer();
             return;
         }
         if (thirdTry.contains(help)) {
-            System.out.println(helpForbidden);
-            String thirdTryAfterHelp = input.nextLine();
-            if (thirdTryAfterHelp.contains(correctAnswer)) {
-                System.out.println(corrects);
-            } else {
-                System.out.println(error);
-            }
+            helpForbidden();
         } else {
             System.out.println(error);
         }
+    }
+    public static void helpForbidden() {
+        System.out.println(helpForbidden);
+        String TryAfterHelp = input.nextLine();
+        if (TryAfterHelp.contains(correctAnswer)) {
+            System.out.println(corrects);
+        } else {
+            System.out.println(error);
+        }
+    }
+    public static void help() {
+        System.out.println(helpAnswer);
+        String helpAsked = input.nextLine();
+        if (helpAsked.contains(correctAnswer)) {
+            System.out.println(corrects);
+        } else {
+            System.out.println(error);
+        }
+    }
+    public static void rightAnswer() {
+        System.out.println(corrects);
     }
 }
