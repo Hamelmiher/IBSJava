@@ -4,9 +4,8 @@ import java.util.Scanner;
 public class Data2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        input.useDelimiter("\r?\n"); //Я понимаю что это условия для работы сканера, но не понимаю как оно работает. Взял со stackowerflow
         System.out.println("Введите \"I like Java!!!\"");
-        String javaLover = input.next();
+        String javaLover = input.nextLine();
         if (javaLover.contains("Java")) {
             if (javaLover.startsWith("I like")){
                 if (javaLover.endsWith("!!!")){
