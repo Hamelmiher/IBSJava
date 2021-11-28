@@ -15,23 +15,22 @@ public class FindX {
             String number1 = Character.toString(equation.charAt(0));
             String sign = Character.toString(equation.charAt(1));
             String number2 = Character.toString(equation.charAt(2));
-            String equals = Character.toString(equation.charAt(3));
             String number3 = Character.toString(equation.charAt(4));
             if (sign.equals("-")) {
                 if (number1.equals("x")) {
                     System.out.println(Integer.parseInt(number3) + Integer.parseInt(number2));
                 }
-                if (number2.equals("x")) {
+                else if (number2.equals("x")) {
                     System.out.println(Integer.parseInt(number1) - Integer.parseInt(number3));
                 }
-                if (number3.equals("x")) {
+                else if (number3.equals("x")) {
                     System.out.println(Integer.parseInt(number1) - Integer.parseInt(number2));
                 }
             } else {
                 if (number1.equals("x")) {
                     System.out.println(Integer.parseInt(number3) - Integer.parseInt(number2));
                 }
-                if (number2.equals("x")) {
+                else if (number2.equals("x")) {
                     System.out.println(Integer.parseInt(number3) - Integer.parseInt(number1));
                 }
             }
