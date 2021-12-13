@@ -3,54 +3,38 @@ package ru.operators.practice;
 import java.util.Scanner;
 
 class Operators2 {
-    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int num1 = getInt();
-        int num2 = getInt();
-        char operation = getOperation();
-        int result = calc(num1,num2,operation);
-        System.out.println("Результат операции: "+result);
-    }
 
-    public static int getInt(){
-        System.out.println("Введите число:");
-        int num;
-        if(scanner.hasNextInt()){
-            num = scanner.nextInt();
-        } else {
-            System.out.println("Вы допустили ошибку при вводе числа. Попробуйте еще раз.");
-            scanner.next();//рекурсия
-            num = getInt();
-        }
-        return num;
-    }
 
-    public static char getOperation(){
-        System.out.println("Введите операцию:");
-        char operation;
-        if(scanner.hasNext()){
-            operation = scanner.next().charAt(0);
-        } else {
-            System.out.println("Вы допустили ошибку при вводе операции. Попробуйте еще раз.");
-            scanner.next();//рекурсия
-            operation = getOperation();
-        }
-        return operation;
-    }
+            Scanner scn = new Scanner(System.in);
+            String answer;
+            System.out.print("Введите первое число: ");
+            double numA = scn.nextDouble();
+            System.out.print("Введите второе число: ");
+            double numB = scn.nextDouble();
+            System.out.println("Введите оператор");
+            double result = 0;
 
-    public static int calc(int num1, int num2, char operation){
-        int result;
-        switch (operation) {
-            case '+' -> result = num1 + num2;
-            case '-' -> result = num1 - num2;
-            case '*' -> result = num1 * num2;
-            case '/' -> result = num1 / num2;
-            default -> {
-                System.out.println("Операция не распознана. Повторите ввод.");
-                result = calc(num1, num2, getOperation());//рекурсия
+            answer = scn.next();
+
+            if(answer.equals("+")){
+                result = numA + numB;
+            }
+
+            else if(answer.equals("-")){
+                result = numA - numB;
+            }
+
+            else if (answer.equals("*")){
+                result = numA * numB;
+            }
+
+            else if (answer.equals("/")){
+                result = numA / numB;
+            }
+
+            System.out.println("Результат операции: " + result);
             }
         }
-        return result;
-    }
-}
+
