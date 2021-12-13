@@ -12,6 +12,8 @@ public class Data4 {
         minValue = myArray[0];
         int maxValue;
         maxValue = myArray[14];
+        System.out.println("Максимальный элемент массива: " + maxValue);
+        System.out.println("Минимальный элемент массива: " + minValue);
         if (Math.abs(minValue) > Math.abs(maxValue)) {
             System.out.println(myArray[0]);
         }
