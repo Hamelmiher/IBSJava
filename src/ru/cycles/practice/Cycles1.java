@@ -19,8 +19,10 @@ public class Cycles1 {
         for (int i = 0; i < size; i++) {
             if (myArray[i] == constX) {
                 System.out.println("Данное значение " + constX + " имеется в константах");
+                break;
             } else if (myArray[i] == constY) {
                 System.out.println("Данное значение " + constY + " имеется в константах");
+                break;
             } else if (myArray[i] == constZ) {
                 System.out.println("Данное значение " + constZ + " имеется в константах");
             }
