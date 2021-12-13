@@ -15,12 +15,12 @@ public class Riddle {
     public static void main(String[] args) {
         System.out.println(question);
         System.out.println("Попытка номер 1: ");
-        String firstsTry = input.nextLine();
-        if (firstsTry.contains(correctAnswer)) {
+        String firstTry = input.nextLine();
+        if (firstTry.contains(correctAnswer)) {
             rightAnswer();
             return;
         }
-        if (firstsTry.contains(help)) {
+        if (firstTry.contains(help)) {
             help();
             return;
         } else {
@@ -33,8 +33,7 @@ public class Riddle {
             return;
         }
         if (secondTry.contains(help)) {
-            helpForbidden();
-            return;
+            helpForbidden2try();
         } else {
             System.out.println(nextAttempt);
         }
@@ -45,12 +44,21 @@ public class Riddle {
             return;
         }
         if (thirdTry.contains(help)) {
-            helpForbidden();
+            helpForbidden3try();
         } else {
             System.out.println(error);
         }
     }
-    public static void helpForbidden() {
+    public static void helpForbidden2try() {
+        System.out.println(helpForbidden);
+        String TryAfterHelp = input.nextLine();
+        if (TryAfterHelp.contains(correctAnswer)) {
+            System.out.println(corrects);
+        } else {
+            System.out.println(nextAttempt);
+        }
+    }
+    public static void helpForbidden3try() {
         System.out.println(helpForbidden);
         String TryAfterHelp = input.nextLine();
         if (TryAfterHelp.contains(correctAnswer)) {
