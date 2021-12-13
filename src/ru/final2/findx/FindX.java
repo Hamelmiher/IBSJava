@@ -26,12 +26,15 @@ public class FindX {
                 else if (number3.equals("x")) {
                     System.out.println(Integer.parseInt(number1) - Integer.parseInt(number2));
                 }
-            } else {
+            } else if (sign.equals("+")) {
                 if (number1.equals("x")) {
                     System.out.println(Integer.parseInt(number3) - Integer.parseInt(number2));
                 }
                 else if (number2.equals("x")) {
                     System.out.println(Integer.parseInt(number3) - Integer.parseInt(number1));
+                }
+                else if (number3.equals("x")) {
+                    System.out.println(Integer.parseInt(number1) + Integer.parseInt(number2));
                 }
             }
         }
